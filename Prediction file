@@ -1,0 +1,13 @@
+# Select a random test sample
+sample_index = np.random.randint(0, X_test.shape[0])
+sample = X_test[sample_index].reshape(1, 28, 28, 1)
+
+# Make a prediction
+prediction = model.predict(sample)
+predicted_label = np.argmax(prediction)
+
+# Display the sample and predicted label
+plt.imshow(sample.reshape(28, 28), cmap='gray')
+plt.title('Predicted label: {}'.format(predicted_label))
+plt.axis('off')
+plt.show()
