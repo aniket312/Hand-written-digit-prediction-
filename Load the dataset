@@ -1,0 +1,10 @@
+
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+# Preprocess the data
+X_train = X_train.reshape(X_train.shape[0], 28, 28, 1).astype('float32') / 255
+X_test = X_test.reshape(X_test.shape[0], 28, 28, 1).astype('float32') / 255
+
+# One-hot encode the labels
+y_train = to_categorical(y_train)
+y_test = to_categorical(y_test)
